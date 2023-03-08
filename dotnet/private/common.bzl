@@ -180,7 +180,7 @@ def is_greater_or_equal_framework(tfm1, tfm2):
     return False
 
 def format_ref_arg(args, refs, targeting_pack_overrides):
-    """Takes 
+    """Takes
 
     Args:
         args: The args object that will be sent into the compilation action

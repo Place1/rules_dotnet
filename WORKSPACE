@@ -26,6 +26,10 @@ load("//dotnet:paket2bazel_dependencies.bzl", "paket2bazel_dependencies")
 
 paket2bazel_dependencies()
 
+load("//tools/dotnet2bazel:dotnet2bazel_dependencies.bzl", "dotnet2bazel_dependencies")
+
+dotnet2bazel_dependencies()
+
 # Fetch NuGet packages needed for our tests
 load("//dotnet:rules_dotnet_dev_nuget_packages.bzl", "rules_dotnet_dev_nuget_packages")
 
