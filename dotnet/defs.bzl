@@ -4,10 +4,6 @@ Users should not load files under "/dotnet"
 """
 
 load(
-    "@rules_dotnet//dotnet/private/rules/csharp:project.bzl",
-    _csharp_project = "csharp_project",
-)
-load(
     "@rules_dotnet//dotnet/private/rules/csharp:binary.bzl",
     _csharp_binary = "csharp_binary",
 )
@@ -73,9 +69,6 @@ def _get_runtime_runtime_identifier(rid):
             },
             no_match_error = "Could not infer default runtime identifier from the current host platform",
         )
-
-def csharp_project(**kwargs):
-    _csharp_project(**kwargs)
 
 def csharp_binary(
         runtime_identifier = None,

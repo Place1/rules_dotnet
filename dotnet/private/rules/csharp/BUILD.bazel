@@ -6,17 +6,6 @@ exports_files(
 )
 
 bzl_library(
-    name = "project",
-    srcs = ["project.bzl"],
-    visibility = [
-        "//docs:__subpackages__",
-        "//dotnet:__subpackages__",
-    ],
-    deps = [
-    ],
-)
-
-bzl_library(
     name = "binary",
     srcs = ["binary.bzl"],
     visibility = [

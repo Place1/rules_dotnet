@@ -277,6 +277,9 @@ def AssemblyAction(
         transitive_runtime_deps = transitive_runtime_deps,
     )
 
+def _quote_src(src):
+    return "\"" + src.path + "\""
+
 def _compile(
         actions,
         compiler_wrapper,
@@ -317,6 +320,8 @@ def _compile(
     args.add("/filealign:512")
 
     args.add("/nologo")
+
+    # args.add("/nullable")
 
     if use_highentropyva(target_framework):
         args.add("/highentropyva+")
@@ -368,7 +373,7 @@ def _compile(
     args.add_all(additionalfiles, format_each = "/additionalfile:%s")
 
     # .cs files
-    args.add_all(srcs)
+    args.add_all(srcs, map_each = _quote_src)
 
     # resources
     args.add_all(resources, format_each = "/resource:%s")
