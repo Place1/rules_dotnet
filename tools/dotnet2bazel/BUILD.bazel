@@ -1,0 +1,5 @@
+alias(
+    name = "dotnet2bazel",
+    actual = "//tools/dotnet2bazel/src/DotnetBazel:DotnetBazel.exe",
+    visibility = ["//visibility:public"],
+)

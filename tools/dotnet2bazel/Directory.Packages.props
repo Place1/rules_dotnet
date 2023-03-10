@@ -1,0 +1,39 @@
+<Project>
+
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <NugetVersion>5.10.0</NugetVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.NETCore.App.Runtime.win-x64" Version="7.0.1" />
+    <PackageVersion Include="Microsoft.NETCore.App.Runtime.linux-x64" Version="7.0.1" />
+    <PackageVersion Include="Microsoft.NETCore.App.Runtime.osx-x64" Version="7.0.1" />
+    <PackageVersion Include="Microsoft.AspNetCore.App.Runtime.win-x64" Version="7.0.1" />
+    <PackageVersion Include="Microsoft.AspNetCore.App.Runtime.linux-x64" Version="7.0.1" />
+    <PackageVersion Include="Microsoft.AspNetCore.App.Runtime.osx-x64" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.Build" Version="17.4.0" />
+    <PackageVersion Include="Microsoft.Build.Framework" Version="17.4.0" />
+    <PackageVersion Include="Microsoft.Build.Locator" Version="1.5.5" />
+    <PackageVersion Include="Microsoft.Build.Utilities.Core" Version="17.4.0" />
+    <PackageVersion Include="Spectre.Console.Cli" Version="0.46.0" />
+    <PackageVersion Include="NuGet.Commands" Version="$(NugetVersion)" />
+    <PackageVersion Include="NuGet.Common" Version="$(NugetVersion)" />
+    <PackageVersion Include="NuGet.Configuration" Version="$(NugetVersion)" />
+    <PackageVersion Include="NuGet.Credentials" Version="$(NugetVersion)" />
+    <PackageVersion Include="NuGet.DependencyResolver.Core" Version="$(NugetVersion)" />
+    <PackageVersion Include="NuGet.Frameworks" Version="$(NugetVersion)" />
+    <PackageVersion Include="NuGet.PackageManagement" Version="$(NugetVersion)" />
+    <PackageVersion Include="NuGet.Packaging.Core" Version="$(NugetVersion)" />
+    <PackageVersion Include="NuGet.Packaging" Version="$(NugetVersion)" />
+    <PackageVersion Include="NuGet.ProjectModel" Version="$(NugetVersion)" />
+    <PackageVersion Include="NuGet.Protocol" Version="$(NugetVersion)" />
+    <PackageVersion Include="NuGet.Resolver" Version="$(NugetVersion)" />
+    <PackageVersion Include="NuGet.Versioning" Version="$(NugetVersion)" />
+    <PackageVersion Include="NuGet.LibraryModel" Version="$(NugetVersion)" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NuGet.Commands" />
+    <PackageReference Include="NuGet.Common" />
+    <PackageReference Include="NuGet.Configuration" />
+    <PackageReference Include="NuGet.Credentials" />
+    <PackageReference Include="NuGet.DependencyResolver.Core" />
+    <PackageReference Include="NuGet.Frameworks" />
+    <PackageReference Include="NuGet.PackageManagement" />
+    <PackageReference Include="NuGet.Packaging.Core" />
+    <PackageReference Include="NuGet.Packaging" />
+    <PackageReference Include="NuGet.ProjectModel" />
+    <PackageReference Include="NuGet.Protocol" />
+    <PackageReference Include="NuGet.Resolver" />
+    <PackageReference Include="NuGet.Versioning" />
+    <PackageReference Include="NuGet.LibraryModel" />
+  </ItemGroup>
+
+</Project>
+

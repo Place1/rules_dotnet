@@ -1,0 +1,28 @@
+load("@rules_dotnet//dotnet:defs.bzl", "csharp_library")
+
+csharp_library(
+    name = "DotnetBazel.Core",
+    srcs = glob(["**/*.cs"], exclude = ["**/bin/**/*.cs", "**/obj/**/*.cs"]),
+    private_deps = [
+        "@dotnet2bazel_dependencies//microsoft.netcore.app.ref",
+        "@dotnet2bazel_dependencies//microsoft.aspnetcore.app.ref",
+    ],
+    target_frameworks = ["net7.0"],
+    deps = [
+        "@dotnet2bazel_dependencies//nuget.commands",
+        "@dotnet2bazel_dependencies//nuget.common",
+        "@dotnet2bazel_dependencies//nuget.configuration",
+        "@dotnet2bazel_dependencies//nuget.credentials",
+        "@dotnet2bazel_dependencies//nuget.dependencyresolver.core",
+        "@dotnet2bazel_dependencies//nuget.frameworks",
+        "@dotnet2bazel_dependencies//nuget.librarymodel",
+        "@dotnet2bazel_dependencies//nuget.packagemanagement",
+        "@dotnet2bazel_dependencies//nuget.packaging",
+        "@dotnet2bazel_dependencies//nuget.packaging.core",
+        "@dotnet2bazel_dependencies//nuget.projectmodel",
+        "@dotnet2bazel_dependencies//nuget.protocol",
+        "@dotnet2bazel_dependencies//nuget.resolver",
+        "@dotnet2bazel_dependencies//nuget.versioning",
+    ],
+    visibility = ["//visibility:public"],
+)

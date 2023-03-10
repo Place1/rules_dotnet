@@ -1,0 +1,53 @@
+load("@rules_dotnet//dotnet:defs.bzl", "csharp_binary", "publish_binary")
+
+csharp_binary(
+    name = "DotnetBazel",
+    srcs = glob(
+        ["**/*.cs"],
+        exclude = [
+            "**/bin/**/*.cs",
+            "**/obj/**/*.cs",
+        ],
+    ),
+    private_deps = [
+        "@dotnet2bazel_dependencies//microsoft.netcore.app.ref",
+        "@dotnet2bazel_dependencies//microsoft.aspnetcore.app.ref",
+    ],
+    project_sdk = "web",
+    target_frameworks = ["net7.0"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//tools/dotnet2bazel/src/DotnetBazel.Core",
+        "@dotnet2bazel_dependencies//microsoft.build",
+        "@dotnet2bazel_dependencies//microsoft.build.framework",
+        "@dotnet2bazel_dependencies//microsoft.build.locator",
+        "@dotnet2bazel_dependencies//microsoft.build.utilities.core",
+        "@dotnet2bazel_dependencies//nuget.configuration",
+        "@dotnet2bazel_dependencies//nuget.frameworks",
+        "@dotnet2bazel_dependencies//nuget.packaging",
+        "@dotnet2bazel_dependencies//nuget.versioning",
+        "@dotnet2bazel_dependencies//spectre.console.cli",
+    ],
+)
+
+publish_binary(
+    name = "DotnetBazel.exe",
+    binary = ":DotnetBazel",
+    runtime_packs = select({
+        "@rules_dotnet//dotnet:rid_linux-x64": [
+            "@dotnet2bazel_dependencies//microsoft.netcore.app.runtime.linux-x64",
+            "@dotnet2bazel_dependencies//microsoft.aspnetcore.app.runtime.linux-x64",
+        ],
+        "@rules_dotnet//dotnet:rid_osx-x64": [
+            "@dotnet2bazel_dependencies//microsoft.netcore.app.runtime.osx-x64",
+            "@dotnet2bazel_dependencies//microsoft.aspnetcore.app.runtime.osx-x64",
+        ],
+        "@rules_dotnet//dotnet:rid_win-x64": [
+            "@dotnet2bazel_dependencies//microsoft.netcore.app.runtime.win-x64",
+            "@dotnet2bazel_dependencies//microsoft.aspnetcore.app.runtime.win-x64",
+        ],
+    }),
+    self_contained = True,
+    target_framework = "net7.0",
+    visibility = ["//visibility:public"],
+)
